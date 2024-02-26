@@ -1,6 +1,8 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
 import styles from "./movie.module.css";
+import { useRouter } from "next/navigation";
 
 interface MovieProps {
   id: string;
@@ -9,9 +11,13 @@ interface MovieProps {
 }
 
 const Movie = ({ id, poster_path, title }: MovieProps) => {
+  const router = useRouter();
+  const onClickHandler = () => {
+    router.push(`/movies/${id}`);
+  };
   return (
     <div className={styles.movie}>
-      <img src={poster_path} alt={title} />
+      <img src={poster_path} alt={title} onClick={onClickHandler} />
       <Link href={`/movies/${id}`}>{title}</Link>
     </div>
   );
