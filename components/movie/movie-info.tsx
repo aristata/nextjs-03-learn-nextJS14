@@ -1,5 +1,8 @@
 import { API_URL } from "@/app/(home)/page";
 import style from "./movie-info.module.css";
+import Link from "next/link";
+import HomeIcon from "../icons/HomeIcon";
+import FilmIcon from "../icons/FilmIcon";
 
 export async function getMovie(id: string) {
   // console.log(`Fetching movies: ${Date.now()}`);
@@ -22,9 +25,18 @@ export default async function MovieInfo({ id }: { id: string }) {
           <h1 className={style.title}>{movie.title}</h1>
           <h3>👍 {movie.vote_average.toFixed()}</h3>
           <p>{movie.overview}</p>
-          <a href={movie.homepage} target={"_blank"}>
-            Homepage 🌌
-          </a>
+          <div className={style.links}>
+            <div className={style.link}>
+              <HomeIcon w={20} h={20} />
+              <a href={movie.homepage} target={"_blank"}>
+                Homepage
+              </a>
+            </div>
+            <div className={style.link}>
+              <FilmIcon />
+              <Link href={`/movies/${id}/credits`}>Credits</Link>
+            </div>
+          </div>
         </div>
       </div>
     </>
