@@ -1,8 +1,8 @@
-import { API_URL } from "@/app/(home)/page";
 import style from "./movie-info.module.css";
 import Link from "next/link";
 import HomeIcon from "../icons/HomeIcon";
 import FilmIcon from "../icons/FilmIcon";
+import { API_URL } from "@/apis/API_URL";
 
 export async function getMovie(id: string) {
   // console.log(`Fetching movies: ${Date.now()}`);
