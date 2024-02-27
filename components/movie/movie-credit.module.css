@@ -1,0 +1,48 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 100px;
+}
+
+.item {
+  background-color: rgb(118, 123, 124);
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.item img {
+  width: 100px;
+  height: auto;
+  margin-right: 30px;
+}
+
+.item h3 {
+  margin: 0;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.infos div {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.infos h1 {
+  color: coral;
+  margin-bottom: 20px;
+}
+
+.infos label {
+  font-size: 12px;
+}
