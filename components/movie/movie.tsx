@@ -18,7 +18,7 @@ const Movie = ({ id, poster_path, title }: MovieProps) => {
   return (
     <div className={styles.movie}>
       <img src={poster_path} alt={title} onClick={onClickHandler} />
-      <Link href={`/movies/${id}`}>{title}</Link>
+      <Link prefetch={true} href={`/movies/${id}`}>{title}</Link>
     </div>
   );
 };

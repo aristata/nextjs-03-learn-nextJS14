@@ -27,7 +27,6 @@ export default async function CreditPage({ params: { id } }) {
             </div>
           </div>
         ))}
-        L
       </div>
     </div>
   );
